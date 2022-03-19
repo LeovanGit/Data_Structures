@@ -44,6 +44,7 @@ public:
         head = head->next;
         delete tmp;
         --size;
+        if (is_empty()) tail = nullptr;
     }
 
     void pop_back()
