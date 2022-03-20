@@ -22,8 +22,8 @@ public:
         }
         else
         {
-            back->prev = new Node <T> (data);
-            back = back->prev;
+            back->next = new Node <T> (data);
+            back = back->next;
         }
 
         ++size;
@@ -33,7 +33,7 @@ public:
     {
         Node <T> * to_delete = front;
         T value = to_delete->data;
-        front = front->prev;
+        front = front->next;
         delete to_delete;
         --size;
 
@@ -53,11 +53,11 @@ private:
     class Node
     {
     public:
-        explicit Node(Type data = Type(), Node <Type> * prev = nullptr) :
-            data(data), prev(prev) {}
+        explicit Node(Type data = Type(), Node <Type> * next = nullptr) :
+            data(data), next(next) {}
 
         Type data;
-        Node <Type> * prev;
+        Node <Type> * next;
     };
 
     Node <T> * front; // first
