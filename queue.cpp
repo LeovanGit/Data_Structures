@@ -37,7 +37,7 @@ public:
         delete to_delete;
         --size;
 
-        //if (size == 0) back = nullptr;
+        if (size == 0) back = nullptr;
         return value;
     }
     
